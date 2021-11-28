@@ -1,4 +1,5 @@
 export class Cotacao{
-  nick_moeda!: string;
-  modo_exibicao!:string;
+  id!:number;
+  url_moeda!: string;
+  nome!:string;
 }

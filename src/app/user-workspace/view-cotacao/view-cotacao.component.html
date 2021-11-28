@@ -19,8 +19,14 @@
   </mat-card-footer>
 </mat-card>
 -->
-<p>{{ola}}</p>
-<button (click)="get_moeda()"></button>
+<button (click)="get_moeda()">Exibir</button>
+<mat-card *ngFor="let cotacao of ola " >
+  <mat-card-header>
+    <mat-card-title>{{cotacao.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>{{cotacao.bid}}</mat-card-content>
+
+</mat-card>
 <!--
 <mat-card *ngFor="let cotacaom of cotacoes_cadastradas" class="mat-card-listagem" fxFlex="20%">
   {{cotacaom}}

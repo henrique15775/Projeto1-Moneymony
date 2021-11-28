@@ -15,13 +15,16 @@ import {MatCardModule} from '@angular/material/card';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { ViewCotacaoComponent } from './view-cotacao/view-cotacao.component';
+import { CadastrarCotacaoComponent } from './cadastrar-cotacao/cadastrar-cotacao.component';
 
 
 @NgModule({
   declarations: [
-    ViewCotacaoComponent
+    ViewCotacaoComponent,
+    CadastrarCotacaoComponent
   ],exports:[
-    ViewCotacaoComponent
+    ViewCotacaoComponent,
+    CadastrarCotacaoComponent
   ],
   imports: [
     CommonModule,
