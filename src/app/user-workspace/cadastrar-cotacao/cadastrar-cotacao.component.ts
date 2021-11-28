@@ -10,10 +10,17 @@ import { CadastrarCotacaoService } from 'src/app/shared/services/cadastrar-cotac
 })
 export class CadastrarCotacaoComponent implements OnInit {
   cotacao!: Cotacao;
-  cadastroFlag = true;
+  cadastroFlag !: boolean;
+  array_cotacao!: Array<Cotacao>;
+  aviso!: string;
   constructor(private cadastroService: CadastrarCotacaoService,  private roteador: Router ) {
 
     this.cotacao = new Cotacao();
+    this.cadastroFlag = true;
+
+    this.cadastroService.listar().subscribe(
+      resposta => {this.array_cotacao = resposta;}
+    );
    /* if (this.rotalAtual.snapshot.paramMap.has('id')) {
       this.cadastroFlag = false;
       const idParaEdicao = Number(this.rotalAtual.snapshot.paramMap.get('id'));
@@ -28,15 +35,29 @@ export class CadastrarCotacaoComponent implements OnInit {
   }
 
   inserirCotacao(): void {
-    if (!this.cotacao.id) {
-      console.log('aqui');
+    this.cadastroService.listar().subscribe(
+      resposta => {this.array_cotacao = resposta;}
+    );
+
+    for(let x of this.array_cotacao){
+      if(x.url_moeda === this.cotacao.url_moeda){
+        console.log('ENTROUAQ');
+        this.cadastroFlag = false;
+        break;
+      }
+    }
+    if (!this.cotacao.id && this.cadastroFlag ==true ) {
+
       this.cadastroService.inserir(this.cotacao).subscribe(
         cotacaoInserido => {
           console.log(cotacaoInserido);
-          this.roteador.navigate(['viewcotacao']);
+
         }
       );
-    }
+    }else{
+      this.aviso = `${this.cotacao.url_moeda} já cadastrado!`
+    this.cadastroFlag = true;
+  }
   }
 
 }

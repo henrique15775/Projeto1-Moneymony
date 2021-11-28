@@ -7,10 +7,7 @@ import { ViewCotacaoComponent } from './user-workspace/view-cotacao/view-cotacao
 const routes: Routes = [{
   path:'viewcotacao',
   component: ViewCotacaoComponent
-},
-  {path:'',
-  component: ViewCotacaoComponent
-  },{
+},{
     path:'cadastrarcotacao',
     component: CadastrarCotacaoComponent
   }

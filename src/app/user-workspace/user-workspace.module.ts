@@ -16,6 +16,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { ViewCotacaoComponent } from './view-cotacao/view-cotacao.component';
 import { CadastrarCotacaoComponent } from './cadastrar-cotacao/cadastrar-cotacao.component';
+import { LayoutMenuModule } from '../layout-menu/layout-menu.module';
 
 
 @NgModule({
@@ -37,8 +38,8 @@ import { CadastrarCotacaoComponent } from './cadastrar-cotacao/cadastrar-cotacao
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-
-    MatMenuModule
+    MatMenuModule,
+    LayoutMenuModule
   ]
 })
 export class UserWorkspaceModule { }

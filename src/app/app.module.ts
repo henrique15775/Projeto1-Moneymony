@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { UserWorkspaceModule } from './user-workspace/user-workspace.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LayoutMenuModule } from './layout-menu/layout-menu.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutMenuModule
 
   ],
   providers: [],
