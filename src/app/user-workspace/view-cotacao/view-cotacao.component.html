@@ -1,35 +1,8 @@
-<!-- <mat-card class="card-insercao-usuario">
+<button (click)="get_moeda()">Atualizar</button>
+<mat-card *ngFor="let cotacao of cotacoesMoney "  >
   <mat-card-header>
-    <mat-card-title>Inserir Usuário</mat-card-title>
+    <mat-card-title>{{cotacao.url_moeda}}</mat-card-title>
   </mat-card-header>
-  <mat-card-content>
-    <mat-form-field appearance="fill" class="mat-form-simples">
-      <mat-label>Nome</mat-label>
-      <input matInput [(ngModel)]="usuario.nome" placeholder="Digite as moedas-comparativo">
-    </mat-form-field>
-    <mat-form-field appearance="fill" class="mat-form-simples">
-      <mat-label>Nome</mat-label>
-      <input matInput [(ngModel)]="usuario.nome" placeholder="Digite as moedas-comparativo">
-    </mat-form-field>
-  </mat-card-content>
-  <mat-card-footer align="center">
-    <button mat-raised-button mat-icon-button color="primary" (click)="inserirUsuario()">
-      <mat-icon>add</mat-icon>
-    </button>
-  </mat-card-footer>
+  <mat-card-content *ngIf="cotacao.code" >Valor do {{cotacao.code}} -> {{cotacao.bid}}</mat-card-content>
+  <button (click)="remover(cotacao)">Remover</button>
 </mat-card>
--->
-
-<button (click)="get_moeda()">Exibir</button>
-<mat-card *ngFor="let cotacao of ola " >
-  <mat-card-header>
-    <mat-card-title>{{cotacao.name}}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>{{cotacao.bid}}</mat-card-content>
-
-</mat-card>
-<!--
-<mat-card *ngFor="let cotacaom of cotacoes_cadastradas" class="mat-card-listagem" fxFlex="20%">
-  {{cotacaom}}
-</mat-card>
--->

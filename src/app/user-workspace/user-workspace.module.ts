@@ -38,8 +38,7 @@ import { LayoutMenuModule } from '../layout-menu/layout-menu.module';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatMenuModule,
-    LayoutMenuModule
+    MatMenuModule
   ]
 })
 export class UserWorkspaceModule { }

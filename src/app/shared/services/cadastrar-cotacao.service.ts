@@ -7,8 +7,8 @@ import { Cotacao } from '../cotacao';
   providedIn: 'root'
 })
 export class CadastrarCotacaoService {
-  cotacoes_url = 'http://localhost:3000/moedas';
-
+  //cotacoes_url = 'http://localhost:3000/moedas';
+  cotacoes_url = 'https://servermoedas137.herokuapp.com/moedas';
   constructor(private httpClient: HttpClient) {
   }
 
@@ -22,6 +22,7 @@ export class CadastrarCotacaoService {
   }
 
   remover(id: number): Observable<object> {
+    console.log(id);
     return this.httpClient.delete(`${this.cotacoes_url}/${id}`);
   }
 
